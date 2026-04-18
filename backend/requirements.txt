@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv==1.0.1
+langchain
+langchain-core
+langchain-mistralai
+langchain-community
+langgraph
