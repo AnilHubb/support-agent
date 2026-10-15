@@ -3,6 +3,32 @@
 Full-stack order-support chatbot powered by **FastAPI + LangChain + Mistral AI** (backend)
 and **React + Vite** (frontend).
 
+
+## 🏗️ System Architecture
+
+The application connects a React frontend to a FastAPI backend.
+The backend handles API requests and coordinates authentication,
+chat sessions, AI processing, and order-related operations.
+
+```mermaid
+flowchart TD
+    A[React + Vite Frontend] <-->|HTTP / JSON| B[FastAPI Backend]
+    B --> C[Authentication and Sessions]
+    B --> D[LangChain AI Agent]
+    D <--> E[Mistral AI]
+    D --> F[Order Tools]
+    F <--> G[(SQLite Database)]
+```
+
+### Request Flow
+
+1. The user submits a message through the React chat interface.
+2. The frontend sends the request to the FastAPI backend.
+3. The backend processes the request and coordinates the AI agent.
+4. The agent uses the configured model and order tools as needed.
+5. The backend returns a response to the frontend.
+
+
 ---
 
 ## Project structure
